@@ -33,8 +33,7 @@
   <body>
     <nav
       class="navbar bg-dark navbar-expand-lg border-bottom border-bottom-dark"
-      data-bs-theme="dark"
-    >
+      data-bs-theme="dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
         <button
@@ -98,39 +97,33 @@
 
         </tr>
       </thead>
+
+      <?php
+      include_once("conexxao.php");
+        $consulta = "SELECT * FROM livro";
+        $con = $mysql->query($consulta) or die($mysqli->error);
+        $id = 0;
+      ?>
+      <?php
+        while ($dado = $con->fetch_array()){ ?>
+
+        
+      
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
+          <th scope="row"><?php echo $dado['id_livro'] ?></th>
+          <td><?php echo $dado['editora_cod_editora'] ?></td>
+          <td><?php echo $dado ['estoque_cod_editora']?></td>
+          <td><?php echo $dado ['nome_livro']?></td>
+          <td><?php echo $dado ['auto_livro']?></td>
+          <td><?php echo  number_format($dado ['preco_livro'],2,",",".");?></td>
+          <td><?php echo $dado ['categoria']?></td>
+          <td><?php echo $dado ['isbn']?></td>
+          <td><?php echo $dado ['ano']?></td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-          <td>@mdo</td>
-        </tr>
+
+        <?php } 
+        ?>
       </tbody>
     </table>
     <!-- Button trigger modal -->
@@ -181,7 +174,7 @@
                   <div class="col-md-6">
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label" >Preço</label>
-                      <input type="number" class="form-control" id="exampleInputEmail1" name="preco"/>
+                      <input type="text" class="form-control" id="exampleInputEmail1" name="preco"/>
                     </div>
                   </div>
                   <div class="col-md-6">
