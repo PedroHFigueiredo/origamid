@@ -5,8 +5,10 @@ if (isset($_POST['email']) || isset($_POST['senha'])) {
 
     if (strlen($_POST['email']) == 0) {
         echo"<script>alert('Preencha seu E-mail')</script>";
+        echo"<script>window.location.href='login.php';</script>";
     } else if (strlen($_POST['senha']) == 0) {
         echo"<script>alert('Preencha sua senha')</script>";
+        echo"<script>window.location.href='login.php';</script>";
     } else {
         $email = $mysql->real_escape_string($_POST['email']);
         $senha = $mysql->real_escape_string($_POST['senha']);

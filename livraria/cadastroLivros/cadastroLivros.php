@@ -154,7 +154,7 @@
       </tbody>
   </table>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar</button>
+  <button type="button" class="btn btn-primary btn b-6" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastrar</button>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
