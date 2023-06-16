@@ -318,7 +318,7 @@ class MinhaOutraClass extends MinhaClass
 }
 
 //Cria um novo objeto
-$newObj = new MinhaOutraClass();7
+$newObj = new MinhaOutraClass();
 //Usa o método da nova classe
 echo $newObj->newMethod();
 //Usa um método da classe pai
@@ -350,4 +350,73 @@ class MinhaClass14
         $this->prop1 = $newval;
     }
 }
+    // Preservando Funcionalidade Originais de um Método enquanto Sobrescreve o mesmo
+    // Funcionalidade a um metodo e, ao mesmo tempo, manter a funcionalidade do método original intacta, use a palavra chave parent juntamente ao operador de resolução de escopo(::)
+
+    class MinhaClass15{
+        public $prop1 = "Sou uma propriedade de Classe!";
+        public function __construct()
+        {
+            echo 'A classe "', __CLASS__,'" foi instanciada </br>';
+        }
+        public function __destruct()
+        {
+            echo 'A class"', __CLASS__,'"foi destruida </br>';
+        }
+        
+        public function __toString()
+        {
+            echo"Usando o método toString";
+            return $this->getProperty();
+        }
+        public function setProperty($newval)
+        {
+            $this->prop1 = $newval;
+        }
+        public function getProperty(){
+            return $this->prop1. "<br/>";
+        }
+
+    };
+
+    class MinhaOutraClass extends MinhaClass1{
+
+        public function __construct()
+        {
+            parent::__construct(); // Invoca o contrutor da Class pai
+                echo "Um novo construtor em" , __CLASS__ ,". <br/>";
+        }
+
+        public function newMethod(){
+            echo "De um novo metodo na classe", __CLASS__, ". <br/>";
+        }
+
+    }
+    // Cria um novo objeto
+    $newObj = new MinhaClass1;
+    // Usa o metodo da nova classe
+    echo $newObj->newMethod();
+    // Usa o metodo da classe pai
+    echo $newObj->getProperty();
+
+    // Atribuindo Visbílidae a Propriedade e Metodos
+
+    //  Controle adicional sobre objetos, metodos e propriedade, atribuimos visibilidade a eles. Essa visibilidade controla como e de onde as propriedade podem ser acessadas. 
+    // Ha três palavras chaves para visibilidade: public, protected, e private. Em adição a sua visibilidade, um metodo ou propriedade pode ser declarado como static, o que premite que seja acessados sem uma instanciação da classe.
+    
+    // Metodos e propriedade Publicas
+
+    // Static, o que permite que sejam acessados sem uma instamciação da classe.
+
+    // Metodos e Propriedades Publicas
+
+    // Todos os metodos e propriedades que usamos, ate agora, eram publicos. isso significa que ekes podem ser acessados de qualquer lugar, tanto dentro quanto fora da classe.
+
+    // Métodos e Propriedade Protegidas 
+
+    // Quando uma propriedades ou método é declarada com protected, ela só pode ser acessada dentro dela própria ou por uma classe descendente (classes que estendem a classe que contem o método protegido).
+
+    // Declare o método getProperty() como protegido, na classe MinhaClass, e tente acessa-lo diretamente fora da classe 
+
 ?>
+
