@@ -10,13 +10,17 @@
         * {
             padding: 0;
             margin: 0;
-            cursor: url(http://www.rw-designer.com/cursor-extern.php?id=130078), default;
+            /* cursor: url(http://www.rw-designer.com/cursor-extern.php?id=130078), default; */
         }
 
         body {
-            background-color: #74EBD5;
-            background-image: linear-gradient(315deg, #74EBD5 30%, #9FACE6 73%), no-repeat;
+            /* background-color: #74EBD5; */
+            /* background-image: linear-gradient(315deg, #74EBD5 30%, #9FACE6 73%), no-repeat; */
             Font-family: Arial;
+        }
+
+        .header-bg {
+            background-color: black;
         }
 
         header {
@@ -218,13 +222,116 @@
 
         .teste {
             background: -webkit-linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
-            -webkit-background-clip:text ;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             width: 200px;
             font-size: 60px;
         }
 
-        
+        /* CSS DOS CARD */
+
+        .card {
+            position: relative;
+            width: 11.875em;
+            height: 16.5em;
+            box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 120ms;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 0.5em;
+            padding-bottom: 3.4em;
+            border-radius: 5px;
+        }
+
+
+        .card::after {
+            content: "Add to Cart";
+            padding-top: 1.25em;
+            padding-left: 1.25em;
+            position: absolute;
+            left: 0;
+            bottom: -60px;
+            background: #00AC7C;
+            color: #fff;
+            height: 2.5em;
+            width: 90%;
+            transition: all 80ms;
+            font-weight: 600;
+            text-transform: uppercase;
+            opacity: 0;
+        }
+
+        .card .title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9em;
+            position: absolute;
+            left: 0.625em;
+            bottom: 1.875em;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .card .price {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 0.9em;
+            position: absolute;
+            left: 0.625em;
+            bottom: 0.625em;
+            color: #000;
+        }
+
+        .card:hover::after {
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        .card:active::after {
+            content: "Added !";
+            height: 3.125em;
+        }
+
+        .text {
+            max-width: 55px;
+        }
+
+        .image {
+            background: rgb(241, 241, 241);
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+        }
+
+        .mainEstrutura {
+            display: flex;
+            gap: 50px;
+            justify-content: center;
+            margin: 120px;
+        }
+
+        h2 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        hr {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .card-esturura {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+
+        }
     </style>
 </head>
 
@@ -237,46 +344,68 @@
                     <li><a href="#">HOME</a></li>
                     <li><a href="#">LIVROS</a></li>
                     <li><a href="#">CONTATO</a></li>
-                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="login.php">LOGIN</a></li>
                 </ul>
 
             </nav>
         </div>
     </header>
 
-    <main class="grid">
+    <main>
+        <div class="mainEstrutura">
+            <div class="card">
+                <div class="image"><span class="text">FOTO</span></div>
+                <span class="title">Cool Chair</span>
+                <span class="price">$100</span>
+            </div>
 
-        <div class="item">
-            <h2>Livro</h2>
-            <img src="" alt="">
-            <p class="preco">R$ 30</p>
-            <p>Livro Top</p>
-            <button class="custom-btn btn"><span>Comprar</span></button>
+            <div class="card">
+                <div class="image"><span class="text">FOTO</span></div>
+                <span class="title">Cool Chair</span>
+                <span class="price">$100</span>
+            </div>
+
+            <div class="card">
+                <div class="image"><span class="text">FOTO</span></div>
+                <span class="title">Cool Chair</span>
+                <span class="price">$100</span>
+            </div>
+
+            <div class="card">
+                <div class="image"><span class="text">FOTO</span></div>
+                <span class="title">Cool Chair</span>
+                <span class="price">$100</span>
+            </div>
+        </div>
+        <hr>
+        <br><br>
+
+        <h2>Muito mais cultura par você</h2>
+
+        <div class="card-esturura">
+
+            <div class="card">
+                <div class="image"><span class="text">FOTO</span></div>
+                <span class="title">Cool Chair</span>
+                <span class="price">$100</span>
+            </div>
+            <div class="card">
+                <div class="image"><span class="text">FOTO</span></div>
+                <span class="title">Cool Chair</span>
+                <span class="price">$100</span>
+            </div>
+
         </div>
 
-        <div class="item">
-            <h2>Livro</h2>
-            <p class="preco">R$ 30</p>
-            <p>Livro Top</p>
-            <a class="comprar" href="#">Comprar</a>
-        </div>
-
-        <div class="item">
-            <h2>Livro</h2>
-            <p class="preco">R$ 30</p>
-            <p>Livro Top</p>
-            <a class="comprar" href="#">Comprar</a>
-        </div>
-
-        <div class="item">
-            <h2>Livro</h2>
-            <p class="preco">R$ 30</p>
-            <p>Livro Top</p>
-            <a class="comprar" href="#">Comprar</a>
-        </div>
     </main>
 
-    <h1 class="teste">Teste</h1>
+    <footer>
+
+
+    </footer>
+
+
+
 
 
 </body>

@@ -1,5 +1,5 @@
 <?php 
-include_once("conexxao.php");
+include_once("../conexao/conexxao.php");
 
 if($_GET["id"]){
     $id_livro = $_GET["id"];

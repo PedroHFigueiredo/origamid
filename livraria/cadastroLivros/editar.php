@@ -1,4 +1,4 @@
-<?php include_once("conexxao.php"); ?>
+<?php include_once("../conexao/conexxao.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">

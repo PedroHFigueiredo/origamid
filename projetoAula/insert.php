@@ -49,7 +49,7 @@ if (isset($_POST['insert'])) {
         <div class="row">
             <div class="col mb-12">
                 <h1>Inserindo registro | Crud Orientado a Objetos PHP</h1>
-<br/>
+                <br />
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 <?php 
 
-include_once("conexxao.php");
+include_once("../conexao/conexxao.php");
 $id = $_POST['id_livro'];
 $nome = $_POST['nome_livro'];
     $autor = $_POST['auto_livro'];

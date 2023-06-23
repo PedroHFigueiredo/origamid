@@ -1,5 +1,5 @@
 <?php
-include_once("conexxao.php");
+include_once("../conexao/conexxao.php");
 if($_POST){
     $nome = $_POST['nome'];
     $autor = $_POST['autor'];
