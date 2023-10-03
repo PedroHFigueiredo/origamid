@@ -18,7 +18,7 @@
 
 
 .card::after {
-    content: "hhhh";
+    content: "Adicionar";
     padding-top: 1.25em;
     padding-left: 1.25em;
     position: absolute;
