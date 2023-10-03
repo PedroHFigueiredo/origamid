@@ -1,0 +1,15 @@
+T:\Publica\TII03\prof.celso\cadastro_sorteio
+
+Abrir o Xampp e criar o banco de dados e tabelas abaixo
+Banco de dados: sorteio
+
+pessoas
+id, int, auto_increment
+nome, varchar(60)
+email,varchar(60)
+
+usuarios
+id_usuario,int, auto_increment
+nome_usuario, varchar(60)
+mail_usuario, varchar (60)
+senha_usuario, varchar(60)
